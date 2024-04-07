@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* primary colors */
+  --clr-light-green: hsl(127, 100%, 73%);
+  --clr-eigengrau: hsl(250, 12%, 10%);
+  --clr-black-russian: hsl(248, 10%, 15%);
+
+  /* password generator colors */
+  --clr-amber: hsl(43, 90%, 69%);
+  --clr-legacy: hsl(252, 4%, 51%);
+  --clr-water-ouzel: hsl(248, 5%, 33%);
+  --clr-spike: hsl(249, 9%, 29%);
+  --clr-border: #d4d4d4;
+
+  /* font-family */
+  --ff-source-code: "Source Code Pro", monospace;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  background: var(--clr-eigengrau);
+}
+
+html {
+  font-family: var(--ff-source-code);
+  font-weight: bold;
+  color: white;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+}
+
+.wrapper h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--clr-legacy);
+  margin-bottom: 1rem;
+}
+
+.password-generated {
+  background: var(--clr-black-russian);
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 350px;
+  /* padding: 0.2rem; */
+}
+
+.password-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  color: white;
+}
+
+.password-generated .fa-copy {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin-left: 3rem;
+  font-size: 1.2rem;
+  color: var(--clr-light-green);
+}
+
+#copy-feedback {
+  color: var(--clr-light-green);
+  position: absolute;
+  bottom: 40px;
+  right: 5px;
+}
+
+.password-generated .fa-copy:hover {
+  cursor: pointer;
+}
+
+.password-generator {
+  background: var(--clr-black-russian);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.character-text {
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-left: 0.2rem;
+  font-weight: normal;
+}
+
+.range {
+  width: 100%;
+  margin-left: 0.2rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 5px;
+  background: var(--clr-eigengrau);
+}
+
+/* .range::-webkit-slider-runnable-track {
+  background-color: var(--clr-light-green);
+} */
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+}
+
+.range::-webkit-slider-thumb:hover {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid var(--clr-light-green);
+}
+
+form {
+  position: relative;
+}
+form .output-value {
+  position: absolute;
+  font-size: 1.5rem;
+  bottom: 33px;
+  right: 0px;
+}
+
+.password-checks {
+  margin-top: 1rem;
+}
+
+.checks {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.password-checks input[type="checkbox"] {
+  margin: 0.5rem 0 0rem 0.2rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--clr-eigengrau);
+  border: 2px solid white;
+}
+
+.password-checks input[type="checkbox"]:hover {
+  border-color: var(--clr-light-green);
+  cursor: pointer;
+}
+
+.password-checks input[type="checkbox"]:checked {
+  background: var(--clr-light-green);
+  position: relative;
+}
+
+.password-checks input[type="checkbox"]:checked::before {
+  content: "\2713";
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 3px;
+  bottom: 15px;
+}
+
+label {
+  font-weight: normal;
+  margin: 0.5rem 0 0 0;
+}
+
+.strength-checker-wrapper {
+  background: var(--clr-eigengrau);
+  padding: 0.1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 3.5rem;
+  /* text-align: center; */
+}
+
+.strength {
+  text-transform: uppercase;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  color: var(--clr-legacy);
+  font-size: 1.2rem;
+}
+
+button {
+  width: 100%;
+  padding: 1rem 0;
+  background: var(--clr-light-green);
+  outline: none;
+  text-transform: uppercase;
+  font-family: var(--ff-source-code);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--clr-eigengrau);
+  color: var(--clr-light-green);
+  border: 2px solid var(--clr-light-green);
+}
+
+.fa-arrow-right {
+  margin-left: 1rem;
+}
+
+.password-strength-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 1rem;
+}
+
+#password-strength1,
+#password-strength2,
+#password-strength3,
+#password-strength4 {
+  display: flex;
+  background-color: transparent;
+  border: 2px solid var(--clr-border);
+  width: 7px;
+  height: 20px;
+}
+
+#errorMessages,
+#errorChecks {
+  font-style: italic;
+  color: red;
+}

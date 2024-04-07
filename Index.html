@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h2>Password Generator</h2>
+        <div class="password-generated">
+          <p class="password-value" id="password-value">P4$5W0rD!</p>
+          <i class="far fa-copy" id="password-copy"></i>
+          <p id="copy-feedback"></p>
+        </div>
+        <div class="password-generator">
+          <form>
+            <p class="character-text">character length</p>
+            <output class="output-value" id="characterAmount">0</output>
+            <input
+              type="range"
+              class="range"
+              id="password-range"
+              min="0"
+              max="20"
+              value="0"
+              name="password-range"
+            />
+          </form>
+          <div class="password-checks">
+            <div class="checks">
+              <input type="checkbox" id="includeUppercase" />
+              <label for="uppercase" id="includeUppercase"
+                >Include Uppercase Letters</label
+              >
+            </div>
+            <div class="checks">
+              <input type="checkbox" id="includeLowercase" />
+              <label for="lowercase" id="includeLowercase"
+                >Include Lowercase Letters</label
+              >
+            </div>
+            <div class="checks">
+              <input type="checkbox" id="includeNumbers" />
+              <label for="numbers" id="includeNumbers">Include Numbers</label>
+            </div>
+            <div class="checks">
+              <input type="checkbox" id="includeSymbols" />
+              <label for="symbols" id="includeSymbols">Include Symbols</label>
+            </div>
+            <div class="error-messages">
+              <p id="errorMessages"></p>
+              <p id="errorChecks"></p>
+            </div>
+          </div>
+
+          <div class="strength-checker-wrapper">
+            <p class="strength">strength</p>
+            <div class="password-strength-wrapper">
+              <p id="passwordStrength"></p>
+              <div id="password-strength1"></div>
+              <div id="password-strength2"></div>
+              <div id="password-strength3"></div>
+              <div id="password-strength4"></div>
+            </div>
+          </div>
+          <button
+            class="button-generator"
+            id="generatePasswordButton"
+            onclick="generatePassword()"
+          >
+            generate<i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="passwordGenerator.js" async defer></script>
+  </body>
+</html>
