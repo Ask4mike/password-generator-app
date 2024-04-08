@@ -143,6 +143,17 @@ function generatePassword() {
   } else {
     errorMessage.textContent = "";
   }
+
+  if (
+    !includeUppercase &&
+    !includeLowercase &&
+    !includeNumbers &&
+    !includeSymbols
+  ) {
+    errorChecks.textContent = "You must select the characters";
+  } else {
+    errorChecks.textContent = "";
+  }
   // Loop to generate the random password
   for (let index = 0; index < length; index++) {
     const randomIndex = Math.floor(Math.random() * charactersAllowed.length);
